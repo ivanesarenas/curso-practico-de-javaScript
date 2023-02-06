@@ -86,7 +86,7 @@
   .desktop-menu {
     position: absolute;
     top: 60px;
-    right: 135px;
+    right: 55px;
     background: var(--white);
     width: 100px;
     height: auto;
@@ -154,17 +154,25 @@
     color: var(--hospital-green) !important;
   }
 
-
   /* Media Query*/
 
   @media (max-width: 640px) {
     .menu {
       display: block;
+      cursor: pointer;
     }
     .navbar-left ul {
       display: none;
     }
     .navbar-email {
+      display: none;
+    }
+    .desktop-menu{
+      display: none;
+    }
+  }
+  @media (min-width: 641px){
+    .mobile-menu{
       display: none;
     }
   }
