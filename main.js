@@ -4,6 +4,7 @@ const menuHamIcon = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
 const aside = document.querySelector('.product-detail')
+const cardsContainer = document.querySelector('.cards-container')
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 menuHamIcon.addEventListener('click', toggleMobileMenu);
@@ -72,18 +73,35 @@ for (product of productList){
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
 
-     // product= {name, price, image} -> product.image
-    const img = document.createElement('img');
-    img.setAttribute('src', product.image);
-
+ // product= {name, price, image} -> product.image
+    const productImg = document.createElement('img');
+    productImg.setAttribute('src', product.image);
+   
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
 
     const productInfoDiv = document.createElement('div');
 
+    productInfoDiv.appendChild(productPrice);
+    productInfoDiv.appendChild(productName);
+
     const productPrice = document.createElement('p');
     productPrice.innerText= '$' + product.price;
     
     const productName = document.createElement('p');
+    productName.innerText = product.name;
 
+    const productInfoFigure = document.createElement ('figure');
+    const productproductImgCart = document.createElement ('img');
+    img.setAttribute('src', './icons/bt_add_to_cart.svg');
+
+    productInfoFigure.appendChild(productImgCart);
+
+    productInfo.appendChild(productInfoFigure);
+
+    productCard.appendChild(productImg);
+
+    cardsContainer.appendChild(productCard);
+
+    
 }
